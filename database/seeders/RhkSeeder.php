@@ -20,7 +20,7 @@ class RhkSeeder extends Seeder
             'nama_rhk' => 'Terlaksananya penyusunan dokumen perencanaan lingkungan hidup yang ditetapkan',
             'bidang_id' => '111',
             'intervensi_id' => '1',
-            'user_id' => '2',
+            'user_id' => '4',
            
 
         ]);
@@ -29,7 +29,7 @@ class RhkSeeder extends Seeder
             'nama_rhk' =>'Tersedianya dokumen pendukung pemberian penghargaan lingkungan hidup tingkat kota/provinsi dan nasional siap disampaikan',
             'bidang_id' => '111',
             'intervensi_id' => '1',
-            'user_id' => '2',
+            'user_id' => '4',
             
         ]);
         DB::table('rhk')->insert([
@@ -37,7 +37,7 @@ class RhkSeeder extends Seeder
             'nama_rhk' =>'Terlaksannya pembinaan dan pengembangan kelembagaan kelompok masyarakat peduli lingkungan hidup dan peningkatan peran serta masyarakat dan pelaporan masyarakat dalam pelestarian fungsi lingkungan hidup',
             'bidang_id' => '111',
             'intervensi_id' => '1',
-            'user_id' => '2',
+            'user_id' => '4',
             
         ]);
         DB::table('rhk')->insert([
@@ -45,7 +45,7 @@ class RhkSeeder extends Seeder
             'nama_rhk' => 'Terlaksananya penyusunan dokumen perencanaan lingkungan hidup yang ditetapkan',
             'bidang_id' => '111',
             'intervensi_id' => '2',
-            'user_id' => '2',
+            'user_id' => '4',
             
 
         ]);
@@ -54,7 +54,7 @@ class RhkSeeder extends Seeder
             'nama_rhk' =>'Tersedianya dokumen pendukung pemberian penghargaan lingkungan hidup tingkat kota/provinsi dan nasional siap disampaikan',
             'bidang_id' => '111',
             'intervensi_id' => '2',
-            'user_id' => '2',
+            'user_id' => '4',
            
         ]);
         DB::table('rhk')->insert([
@@ -62,7 +62,7 @@ class RhkSeeder extends Seeder
             'nama_rhk' =>'Terlaksannya pembinaan dan pengembangan kelembagaan kelompok masyarakat peduli lingkungan hidup dan peningkatan peran serta masyarakat dan pelaporan masyarakat dalam pelestarian fungsi lingkungan hidup',
             'bidang_id' => '111',
             'intervensi_id' => '2',
-            'user_id' => '2',
+            'user_id' => '4',
             
         ]);
     }

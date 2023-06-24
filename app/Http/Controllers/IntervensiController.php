@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\IntervensiModel;
+use App\Models\BidangModel;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IntervensiController extends Controller
 {
@@ -13,7 +17,16 @@ class IntervensiController extends Controller
      */
     public function index()
     {
-        //
+        $users = Auth::user();
+        
+        // dd($users->id);
+        if($users){
+            $intervensi = IntervensiModel::with('dt_bidangIn', 'dt_userIn')->where('user_id',$users->id)->get();
+            // dd($rhk);
+             return view('intervensi.index', [
+                'intervensi'=>$intervensi
+            ]); 
+        };
     }
 
     /**
@@ -23,7 +36,9 @@ class IntervensiController extends Controller
      */
     public function create()
     {
-        //
+        $bidang = BidangModel::get();
+        $user = User::get();
+        return view('intervensi.create', compact(['bidang', 'user'])); 
     }
 
     /**
@@ -34,7 +49,13 @@ class IntervensiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data = $this->validate($request, [
+             'nama_intervensi' => 'required',
+             'bidang_id' => 'required',
+             'user_id' => 'required',
+         ]);
+         IntervensiModel::create($data);
+        return redirect()->route('intervensi.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -77,8 +98,9 @@ class IntervensiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(IntervensiModel $intervensi)
     {
-        //
+        $intervensi->delete($intervensi->id);
+        return redirect()->route('intervensi.index')->with('success', 'Data berhasil dihapus');
     }
 }

@@ -19,13 +19,13 @@ class IntervensiSeeder extends Seeder
             'id'=> '1',
             'nama_intervensi' =>'Meningkatknya penataan terhadap kebijakan di bidang lingkungan hidup',
             'bidang_id' => '111',
-            'user_id' => '2',
+            'user_id' => '4',
         ]);
         DB::table('intervensi')->insert([
             'id'=> '2',
             'nama_intervensi' =>'Terfasilitasnya ketaatan masyarakat terhadap pengelolaan lingkungan hidup',
             'bidang_id' => '111',
-            'user_id' => '2',
+            'user_id' => '4',
         ]);
     }
 }
