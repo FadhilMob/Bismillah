@@ -100,7 +100,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="role">
                                     <option value="admin">admin</option>
-                                    <option value="admin">user</option>
+                                    <option value="user">user</option>
                                 </select>
                             </div>
                         </div> 

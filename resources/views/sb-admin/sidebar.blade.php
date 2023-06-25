@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <ul class="navbar-nav bg-smart sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
@@ -15,8 +17,8 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link" href="/dashboard">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <i style="font-size:20px" class="material-icons">&#xe871;</i>
+            <span>DASHBOARD</span></a>
     </li>
 
     <!-- Divider -->
@@ -31,26 +33,26 @@
 
     <li class="nav-item">
         <a class="nav-link" href="/intervensi">
-            <i class="fas fa-fw fa-cog"></i>
+            <i style="font-size:20px" class="fa">&#xf16c;</i>
             <span>DATA INTERVENSI</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/rhk">
-            <i class="fas fa-fw fa-cog"></i>
+            <i style="font-size:20px" class="fa">&#xf16c;</i>
             <span>DATA RHK</span>
         </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="/laporan/create">
-            <i class="fas fa-fw fa-cog"></i>
+            <i style="font-size:20px" class="bi bi-file-earmark-plus"></i>
             <span>LAPORAN</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/arsip">
-            <i class="fas fa-fw fa-cog"></i>
+        <a class="nav-link" href="/laporan">
+            <i style="font-size:20px" class="material-icons">&#xe2c7;</i>
             <span>ARSIP</span>
         </a>
     </li>

@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\IntervensiController;
+use App\Http\Controllers\LaporanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,8 @@ Route::resource('rhk', RhkController::class);
 Route::get('rhk/{id}/show', [RhkController::class, 'show'])->middleware('auth');
 Route::resource('users', UserController::class);
 Route::resource('intervensi', IntervensiController::class);
+
+Route::post('laporan', [LaporanController::class, 'index'])->name('laporan.index');
+Route::get('/create-pdf', [LaporanController::class, 'createPDF'])->name('create-pdf');
+Route::get('/laporan/{id}/report', [LaporanController::class, 'report'])->name('report');
+Route::resource('laporan', LaporanController::class);
