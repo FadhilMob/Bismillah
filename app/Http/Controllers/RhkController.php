@@ -51,14 +51,30 @@ class RhkController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $this->validate($request, [
-            'nama_rhk' => 'required',
-            'bidang_id' => 'required',
-            'user_id' => 'required',
-            'intervensi_id' => 'required',
-        ]);
-        RhkModel::create($data);
-        return redirect()->route('rhk.index')->with('success', 'Data berhasil disimpan');
+      
+        //memasukkan data ke array
+        $nama_rhk            = $request->input('nama_rhk');
+        $bidang_id           = $request->input('bidang_id');
+        $intervensi_id       = $request->input('intervensi_id');
+        $user_id             = $request->input('user_id');
+
+
+        $total = count($nama_rhk);
+
+
+            //melakukan perulangan input
+            for($i=0; $i<$total; $i++){
+
+                //insert post
+                RhkModel::create([
+                    'nama_rhk'     => $nama_rhk[$i],
+                    'bidang_id'     => $bidang_id[$i],
+                    'intervensi_id'     => $intervensi_id[$i],
+                    'user_id'   => $user_id[$i]
+                ]);
+            }
+
+         return redirect()->route('rhk.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -101,9 +117,10 @@ class RhkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(RhkModel $rhk)
     {
-        //
+        $rhk->delete($rhk->id);
+        return redirect()->route('rhk.index')->with('success', 'Data berhasil dihapus');
     }
 
     public function __construct()

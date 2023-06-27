@@ -49,13 +49,28 @@ class IntervensiController extends Controller
      */
     public function store(Request $request)
     {
-         $data = $this->validate($request, [
-             'nama_intervensi' => 'required',
-             'bidang_id' => 'required',
-             'user_id' => 'required',
-         ]);
-         IntervensiModel::create($data);
-        return redirect()->route('intervensi.index')->with('success', 'Data berhasil disimpan');
+        
+               //memasukkan data ke array
+               $nama_intervensi = $request->input('nama_intervensi');
+               $bidang_id       = $request->input('bidang_id');
+               $user_id         = $request->input('user_id');
+       
+       
+               $total = count($nama_intervensi);
+       
+       
+                   //melakukan perulangan input
+                   for($i=0; $i<$total; $i++){
+       
+                       //insert post
+                       IntervensiModel::create([
+                           'nama_intervensi'     => $nama_intervensi[$i],
+                           'bidang_id'     => $bidang_id[$i],
+                           'user_id'   => $user_id[$i]
+                       ]);
+                   }
+       
+                return redirect()->route('intervensi.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**

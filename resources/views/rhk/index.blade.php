@@ -32,10 +32,7 @@
                             <th scope="col">No</th>
                             <th scope="col">Rencana Hasil Kerja Pimpinan Yang TerInvensi</th>
                             <th scope="col">Rencana Hasil Kerja</th>
-                            <!-- <th scope="col">Nama Bidang</th>
-                            <th scope="col">Nama User</th>
-                            <th scope="col">Role</th> 
-                            <th scope="col">Aksi</th> -->
+                            <th scope="col">Aksi</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -44,6 +41,18 @@
                             <th scope="row">{{ $key+1 }}</th>
                             <td>{{ $rhk->dt_intervensi->nama_intervensi}}</td>
                             <td>{{ $rhk->nama_rhk}}</td>
+                            <td align="center">
+                                
+                                {{-- Tombol Delete --}}
+                                <form action="{{ route('rhk.destroy', $rhk->id) }}" method="POST" class="d-inline">
+                                    @method('DELETE')
+                                    @csrf
+                                        <button style="width: 60px; height: 40px; margin:5px" class="btn btn-danger btn-icon-split" onclick="return confirm('Anda Yakin Menghapus Data Ini?')">
+                                        <i class="bi bi-trash3"></i>
+                                        </button>
+                                </form>
+                                
+                            </td>
                         </td>
                         </tr>
                         @endforeach

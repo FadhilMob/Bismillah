@@ -123,32 +123,6 @@
         let table = new DataTable('#myTable');
     </script> 
 
-    <script>
-        var i=0;
-        $('#add').click(function(){
-            ++i;
-            $('#table').append(
-                `<tr>
-                    <td>
-                        <input type="text" name="input[`+i+`][nama_intervensi]" placeholder="Masukkan data " class="form-control" />
-                    </td>
-                    <td>
-                        <input type="number" name="input[`+i+`][bidang_id]" placeholder="Pilih Kode Bidang" class="form-control" />
-                    </td>
-                    <td>
-                        <input type="number" name="input[`+i+`][user_id]" placeholder="Pilih Kode User" class="form-control" />
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger remove-table-row">Remove</button>
-                    </td>
-                </tr>`);            
-        });
-
-        $(document).on('click','.remove-table-row', function(){
-            $(this).parents('tr').remove();
-        });
-    </script>
-
 </body>
 
 </html>
