@@ -4,7 +4,7 @@
     | DATA ARSIP
 @endsection
 @section('content')
-    <center><h1>LAPORAN</h1></center>
+    <center><h1>ARSIP</h1></center>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             

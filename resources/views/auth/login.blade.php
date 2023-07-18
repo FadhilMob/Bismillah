@@ -18,7 +18,7 @@
                 </div>
             </p> <center>
             <div class="col-lg-5 d-none d-lg-block">
-            <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('login') }}">
                                     @csrf
 
                                     <div class="row mb-4">
@@ -60,7 +60,6 @@
                                     </div>
                             </form>
             <hr class="my-4">
-
           </div>
         </div>
       </div>

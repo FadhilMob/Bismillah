@@ -16,7 +16,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="/dashboard">
+        <a class="nav-link" href="/home">
             <i style="font-size:20px" class="material-icons">&#xe871;</i>
             <span>DASHBOARD</span></a>
     </li>

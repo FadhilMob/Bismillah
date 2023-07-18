@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="bg-smart">
+<body background="login.jpg">
 
         <div class="container">
 

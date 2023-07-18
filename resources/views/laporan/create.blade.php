@@ -63,6 +63,42 @@
                             <div class="container">
                                 <center><h2>TAMBAHKAN LAPORAN </h2></center>
 
+                                {{-- ID User --}}
+                            <div class="form-group mt-4">
+                                <label for="exampleInputEmail1"><h6>ID ASN</h6></label>
+                                {{-- dropdown ASN --}}
+                                <div class="dropdown">
+                                    <div class="btn-group">
+                                            <select id="user-dropdown" class="form-control" name="user_id">
+                                                <option value="">-- Pilih ASN --</option>
+                                                @foreach ($users as $data) 
+                                                <option value="{{$data->id}}">
+                                                    {{$data->name}}
+                                                </option>
+                                                @endforeach
+                                            </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- RHK --}}
+                            <div class="form-group mt-4">
+                                <label for="exampleInputEmail1"><h6>RHK</h6></label>
+                                {{-- dropdown RHK --}}
+                                <div class="dropdown">
+                                    <div class="btn-group">
+                                            <select id="rhk-dropdown" class="form-control" name="rhk_id">
+                                                <option value="">-- Pilih RHK --</option>
+                                                @foreach ($rhk as $data) 
+                                                <option value="{{$data->id}}">
+                                                    {{$data->nama_rhk}}
+                                                </option>
+                                                @endforeach
+                                            </select>
+                                    </div>
+                                </div>
+                            </div>
+
                                 {{-- JUDUL --}}
                             <div class="form-group mt-4">
                                 <label for="exampleInputEmail1"><h6>Judul</h6></label>

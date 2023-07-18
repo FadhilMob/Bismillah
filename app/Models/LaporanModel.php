@@ -10,6 +10,8 @@ class LaporanModel extends Model
     use HasFactory;
     protected $table = 'laporan';
     protected $fillable = [
+        'user_id',
+        'rhk_id',
         'judul',
         'latar_belakang',
         'dasar_hukum',
@@ -38,4 +40,12 @@ class LaporanModel extends Model
         'role'
 
     ];
+    public function dt_userLap()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    public function dt_rhkLap()
+    {
+        return $this->belongsTo(RhkModel::class, 'rhk_id');
+    }
 }

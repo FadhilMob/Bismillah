@@ -79,7 +79,7 @@ body {
     line-height: 1.5;
     color: #858796;
     text-align: left;
-    background-color: #fff
+    background-color: #fff;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -7028,7 +7028,12 @@ a.close.disabled {
 .bg-primary {
     background-color: #4e73df !important
 }
+.bg-img {
+    background-image: url('login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 
+}
 .bg-smart {
     background-color: #20323E !important;
 }

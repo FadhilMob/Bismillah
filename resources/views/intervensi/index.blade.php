@@ -1,7 +1,7 @@
 @extends('sb-admin.index')
 
 @section('title')
-    | DATA RHK
+    | DATA INTERVENSI RHK
 @endsection
 @section('content')
 <h2>DATA RHK INTERVENSI PIMPINAN</h2>
