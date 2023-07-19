@@ -19,18 +19,22 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('vendor/sb-admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    
+    <!-- <style>
+        body {
+            background-image: url("{{ asset('vendor/images/login.jpg') }}")
+        }
+    </style> -->
 
 </head>
 
-<body background="login.jpg">
+<body class="bd-img" style="background-image: url('vendor/images/login.jpg')">
 
         <div class="container">
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="col-xl-6 col-lg-7 col-md-7">
                 @yield('content')
             </div>
 

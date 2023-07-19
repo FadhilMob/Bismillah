@@ -7029,10 +7029,9 @@ a.close.disabled {
     background-color: #4e73df !important
 }
 .bg-img {
-    background-image: url('login.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
+    /* background-image: url("{{ asset('vendor/images/login.jpg') }}"); */
+    width: 500px;
+    height: 200px;
 }
 .bg-smart {
     background-color: #20323E !important;

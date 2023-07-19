@@ -63,24 +63,6 @@
                             <div class="container">
                                 <center><h2>TAMBAHKAN LAPORAN </h2></center>
 
-                                {{-- ID User --}}
-                            <div class="form-group mt-4">
-                                <label for="exampleInputEmail1"><h6>ID ASN</h6></label>
-                                {{-- dropdown ASN --}}
-                                <div class="dropdown">
-                                    <div class="btn-group">
-                                            <select id="user-dropdown" class="form-control" name="user_id">
-                                                <option value="">-- Pilih ASN --</option>
-                                                @foreach ($users as $data) 
-                                                <option value="{{$data->id}}">
-                                                    {{$data->name}}
-                                                </option>
-                                                @endforeach
-                                            </select>
-                                    </div>
-                                </div>
-                            </div>
-
                             {{-- RHK --}}
                             <div class="form-group mt-4">
                                 <label for="exampleInputEmail1"><h6>RHK</h6></label>
@@ -334,12 +316,10 @@
                                 </div>
 
                             {{-- Image --}}
-                            {{-- <label for="exampleInputEmail1">Image</label>
-                            <div class="input-group mb-3">
-                                <div class="custom-file">
-                                    <input type="file" class="form-control" id="image" name="image">
-                                </div>
-                            </div> --}}
+                                <label for="image"><h4>Dokumentasi</h4><h6 style="color: red"> *WAJIB diisi dan hanya bisa input diawal, tidak bisa diedit</h6></label>
+                                <input type="file" class="form-control" name="image[]" placeholder="" multiple/>
+                                <label for=""></label>
+                                <label for=""></label>
 
                             {{-- TOMBOL TAMBAH --}}   
                             <button type="submit" value="submit" name="add" class="btn btn-md btn-success mt-5">SAVE</button>
