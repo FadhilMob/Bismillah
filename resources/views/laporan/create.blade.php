@@ -65,7 +65,7 @@
 
                             {{-- RHK --}}
                             <div class="form-group mt-4">
-                                <label for="exampleInputEmail1"><h6>RHK</h6></label>
+                                <label for="exampleInputEmail1"><h4>RHK</h4></label>
                                 {{-- dropdown RHK --}}
                                 <div class="dropdown">
                                     <div class="btn-group">
@@ -80,11 +80,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <label for=""></label>
+                            <label for=""></label>
 
-                                {{-- JUDUL --}}
+                                 {{-- JUDUL --}}
                             <div class="form-group mt-4">
-                                <label for="exampleInputEmail1"><h6>Judul</h6></label>
-                                <textarea rows="3" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul')}}"></textarea>
+                                <label for="exampleInputEmail1"><h4>Judul</h4></label>
+                                <textarea rows="3" class="form-control @error('judul') is-invalid @enderror" name="judul" >{{ old('judul')}}</textarea>
                                 {{-- PESAN ERROR --}}
                                 @error('judul')
                                     <div class="invalid-feedback">
@@ -92,58 +94,21 @@
                                     </div>
                                 @enderror
                             </div>
+                            <label for=""></label>
+                            <label for=""></label>
 
-                            {{-- LATAR BELAKANG --}}
-                            <div class="form-group">
-                                <form action="#">
-                                <label><h6>I. Latar Belakang</h6></label>
-                                <textarea id="latar_belakang" class="form-control @error('latar_belakang') is-invalid @enderror" rows="4" name="latar_belakang">{{old('latar_belakang')}}</textarea>
-                                @error('latar_belakang')
-                                    <div class="alert alert-danger">{{$message}}</div>
-                                @enderror
-                                </form>
-                            </div>
-
-                            {{-- DASAR HUKUM --}}
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"><h6>II. Dasar Hukum</h6></label>
-                                <textarea id="dasar_hukum" class="form-control @error('dasar_hukum') is-invalid @enderror" name="dasar_hukum" value="{{ old('dasar_hukum')}}"></textarea>
-                                {{-- PESAN ERROR --}}
-                                @error('dasar_hukum')
-                                    <div class="invalid-feedback">
-                                        {{$message}}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            {{-- DASAR PELAKSANAAN --}}
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"><h6>III. Dasar Pelaksanaan</h6></label>
-                                <textarea rows="3" id="dasar_pelaksanaan" class="form-control @error('dasar_pelaksanaan') is-invalid @enderror" name="dasar_pelaksanaan" value="{{ old('dasar_pelaksanaan')}}"></textarea>
-                                {{-- PESAN ERROR --}}
-                                @error('dasar_pelaksanaan')
-                                    <div class="invalid-feedback">
-                                        {{$message}}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            {{-- WAKTU PELAKSANAAN --}}
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"><h6>IV. Waktu Pelaksanaan</h6></label>
-                                <textarea id="waktu_pelaksanaan" class="form-control @error('waktu_pelaksanaan') is-invalid @enderror" name="waktu_pelaksanaan" value="{{ old('waktu_pelaksanaan')}}"></textarea>
-                                {{-- PESAN ERROR --}}
-                                @error('waktu_pelaksanaan')
-                                    <div class="invalid-feedback">
-                                        {{$message}}
-                                    </div>
-                                @enderror
+                            {{-- Image --}}
+                            <div>
+                            <label for="image"><h4>Dokumentasi</h4><h6 style="color: red"> *WAJIB diisi dan hanya bisa input diawal, tidak bisa diedit</h6></label>
+                            <input type="file" class="form-control" name="image[]" placeholder="" multiple/>
+                            <label for=""></label>
+                            <label for=""></label>
                             </div>
 
                             {{-- HARI --}}
                             <div class="form-row">
                                 <div class="form-group col-md-3">
-                                    <label for="exampleInputEmail1">Tanggal</label>
+                                    <label for="exampleInputEmail1">Tanggal Kegiatan</label>
                                     <input type="date" class="form-control @error('hari') is-invalid @enderror" name="hari" value="{{ old('hari')}}">
                                     {{-- PESAN ERROR --}}
                                     @error('hari')
@@ -175,6 +140,62 @@
                                 @enderror
                             </div>
                             </div>
+                            <label for=""></label>
+                            <label for=""></label>
+
+                            {{-- LATAR BELAKANG --}}
+                            <div class="form-group">
+                                <form action="#">
+                                <label><h4>I. Latar Belakang</h4></label>
+                                <textarea id="latar_belakang" class="form-control @error('latar_belakang') is-invalid @enderror" rows="4" name="latar_belakang">{{old('latar_belakang')}}</textarea>
+                                @error('latar_belakang')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                </form>
+                            </div>
+                            <label for=""></label>
+                            <label for=""></label>
+
+                            {{-- DASAR HUKUM --}}
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"><h4>II. Dasar Hukum</h4></label>
+                                <textarea id="dasar_hukum" class="form-control @error('dasar_hukum') is-invalid @enderror" name="dasar_hukum" >{{ old('dasar_hukum')}}</textarea>
+                                {{-- PESAN ERROR --}}
+                                @error('dasar_hukum')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                            </div>
+                            <label for=""></label>
+                            <label for=""></label>
+
+                            {{-- DASAR PELAKSANAAN --}}
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"><h4>III. Dasar Pelaksanaan</h4></label>
+                                <textarea rows="3" id="dasar_pelaksanaan" class="form-control @error('dasar_pelaksanaan') is-invalid @enderror" name="dasar_pelaksanaan" >{{ old('dasar_pelaksanaan')}}</textarea>
+                                {{-- PESAN ERROR --}}
+                                @error('dasar_pelaksanaan')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                            </div>
+                            <label for=""></label>
+                            <label for=""></label>
+
+                            {{-- WAKTU PELAKSANAAN --}}
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"><h4>IV. Waktu Pelaksanaan</h4></label>
+                                <textarea id="waktu_pelaksanaan" class="form-control @error('waktu_pelaksanaan') is-invalid @enderror" name="waktu_pelaksanaan" >{{ old('waktu_pelaksanaan')}}</textarea>
+                                {{-- PESAN ERROR --}}
+                                @error('waktu_pelaksanaan')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                            </div>
+                            <label for=""></label>
 
                             {{-- TEMPAT --}}
                             <div class="form-group">
@@ -187,11 +208,12 @@
                                     </div>
                                 @enderror
                             </div>
+                            <label for=""></label>
 
                             {{-- PESERTA --}}
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Peserta</label>
-                                <textarea id="peserta" class="form-control @error('peserta') is-invalid @enderror" name="peserta" value="{{ old('peserta')}}"></textarea>
+                                <textarea id="peserta" class="form-control @error('peserta') is-invalid @enderror" name="peserta" >{{ old('peserta')}}</textarea>
                                 {{-- PESAN ERROR --}}
                                 @error('peserta')
                                     <div class="invalid-feedback">
@@ -199,11 +221,13 @@
                                     </div>
                                 @enderror
                             </div>
+                            <label for=""></label>
+                            <label for=""></label>
                  
                             {{-- TUJUAN --}}
                             <div class="form-group">
-                                <label for="exampleInputEmail1"><h6>V. Tujuan</h6></label>
-                                <textarea rows="8" id="tujuan" class="form-control @error('tujuan') is-invalid @enderror" name="tujuan" value="{{ old('tujuan')}}"></textarea>
+                                <label for="exampleInputEmail1"><h4>V. Tujuan</h4></label>
+                                <textarea rows="8" id="tujuan" class="form-control @error('tujuan') is-invalid @enderror" name="tujuan" >{{ old('tujuan')}}</textarea>
                                 {{-- PESAN ERROR --}}
                                 @error('tujuan')
                                     <div class="invalid-feedback">
@@ -211,11 +235,13 @@
                                     </div>
                                 @enderror
                             </div>
+                            <label for=""></label>
+                            <label for=""></label>
 
                             {{-- IDENTIFIKASI MASALAH --}}
                             <div class="form-group">
-                                <label for="exampleInputEmail1"><h6> VI. Identifikasi Masalah</h6></label>
-                                <textarea id="summernote" class="form-control @error('identifikasi_masalah') is-invalid @enderror" name="identifikasi_masalah" value="{{ old('identifikasi_masalah')}}"></textarea>
+                                <label for="exampleInputEmail1"><h4> VI. Identifikasi Masalah</h4></label>
+                                <textarea id="summernote" class="form-control @error('identifikasi_masalah') is-invalid @enderror" name="identifikasi_masalah" >{{ old('identifikasi_masalah')}}</textarea>
                                 {{-- PESAN ERROR --}}
                                 @error('identifikasi_masalah')
                                     <div class="invalid-feedback">
@@ -223,23 +249,25 @@
                                     </div>
                                 @enderror
                             </div>
+                            <label for=""></label>
+                            <label for=""></label>
 
                             {{-- DOKUMENTASI --}}
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"><h6>VII. Dokumentasi (Foto)</h6></label>
-                                <textarea id="dokumentasi" class="form-control @error('dokumentasi') is-invalid @enderror" name="dokumentasi" value="{{ old('dokumentasi')}}"></textarea>
+                            {{-- <div class="form-group">
+                                <label for="exampleInputEmail1"><h4>VII. Dokumentasi (Foto)</h4></label>
+                                <textarea id="dokumentasi" class="form-control @error('dokumentasi') is-invalid @enderror" name="dokumentasi" >{{ old('dokumentasi')}}</textarea> --}}
                                 {{-- PESAN ERROR --}}
-                                @error('dokumentasi')
+                                {{-- @error('dokumentasi')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>
                                 @enderror
-                            </div>
+                            </div> --}}
 
                             {{-- JABATAN KIRI --}}
                             <div class="form-row">
                                 <div class="form-group col-md-4" style="text-align: center">
-                                    <label for="exampleInputEmail1"><b>Tanda Tangan</b></label>
+                                    <label for="exampleInputEmail1"><h4>Tanda Tangan</h4></label>
                                     <input style="text-align: center" type="text" class="form-control @error('jabatan1') is-invalid @enderror" name="jabatan1" placeholder="Jabatan" value="{{ old('jabatan1')}}">
                                     
                                     @error('jabatan1')
@@ -253,7 +281,7 @@
 
                             {{-- JABATAN KANAN --}}
                             <div class="form-group col-md-4" style="text-align: center">
-                                <label for="exampleInputEmail1"><b>Tanda Tangan</b></label>
+                                <label for="exampleInputEmail1"><h4>Tanda Tangan</h4></label>
                                 <input style="text-align: center" type="text" class="form-control @error('jabatan2') is-invalid @enderror" name="jabatan2" placeholder="Jabatan" value="{{ old('jabatan2')}}">
                                 @error('jabatan2')
                                     <div class="invalid-feedback">
@@ -285,7 +313,7 @@
 
                             {{-- JABATAN BAWAH TENGAH --}}
                             <center><div class="form-group col-md-4" style="text-align: center">
-                                <label for="exampleInputEmail1"><b>Tanda Tangan</b></label>
+                                <label for="exampleInputEmail1"><h4>Tanda Tangan</h4></label>
                                 <textarea id="jabatan3" style="text-align: center" type="text" class="form-control @error('jabatan3') is-invalid @enderror" name="jabatan3" placeholder="Jabatan" value="{{ old('jabatan3')}}"></textarea>
                                 
                                 @error('jabatan3')
@@ -305,7 +333,7 @@
                             
                             {{-- STATUS --}}
                             <div class="form-group row">
-                                <label for="role" class="form-label text-mdright"><b>STATUS</b></label>
+                                <label for="role" class="form-label text-mdright"><h4>STATUS</h4></label>
                                     <div class="col-md-6" value="{{ __('Role') }}">
                                         <select class="form-control" name="role">
                                             <option style="background-color: yellow" value="BELUM">Belum</option>
@@ -314,12 +342,6 @@
                                         </select>
                                     </div>
                                 </div>
-
-                            {{-- Image --}}
-                                <label for="image"><h4>Dokumentasi</h4><h6 style="color: red"> *WAJIB diisi dan hanya bisa input diawal, tidak bisa diedit</h6></label>
-                                <input type="file" class="form-control" name="image[]" placeholder="" multiple/>
-                                <label for=""></label>
-                                <label for=""></label>
 
                             {{-- TOMBOL TAMBAH --}}   
                             <button type="submit" value="submit" name="add" class="btn btn-md btn-success mt-5">SAVE</button>
@@ -523,7 +545,7 @@
     <script>
         $(document).ready(function() {
             $('#jabatan3').summernote({
-            placeholder: 'Jabatan (Langsung Enter jika a.n untuk menambahkan jabatan dibawahnya)',
+            placeholder: 'Jabatan (a.n KEPALA DINAS LINGKUNGAN HIDUP - SEKRETARIS)',
             tabsize: 2,
             height: 80,
             toolbar: [

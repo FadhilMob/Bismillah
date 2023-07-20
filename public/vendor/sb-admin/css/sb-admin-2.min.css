@@ -11,7 +11,7 @@
  */
 :root {
     --hijau: #acf538;
-    --dlh:#A4C53B;
+    --dlh: #A4C53B;
     --blue: #4e73df;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -49,6 +49,14 @@
 ::after,
 ::before {
     box-sizing: border-box
+}
+
+.padding.img {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    line-height: 100px;
+    padding-left: 90px;
 }
 
 html {
@@ -7028,11 +7036,13 @@ a.close.disabled {
 .bg-primary {
     background-color: #4e73df !important
 }
+
 .bg-img {
     /* background-image: url("{{ asset('vendor/images/login.jpg') }}"); */
     width: 500px;
     height: 200px;
 }
+
 .bg-smart {
     background-color: #20323E !important;
 }

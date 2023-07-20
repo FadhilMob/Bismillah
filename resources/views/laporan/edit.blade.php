@@ -64,9 +64,9 @@
                             <div class="container">
                                 <center><h2>EDIT LAPORAN </h2></center>
 
-                                {{-- JUDUL --}}
+                                 {{-- JUDUL --}}
                             <div class="form-group mt-4">
-                                <label for="exampleInputEmail1"><h6>Judul</h6></label>
+                                <label for="exampleInputEmail1"><h4>Judul</h4></label>
                                 <textarea rows="4" class="form-control @error('judul') is-invalid @enderror" name="judul">{{ $laporan->judul}}</textarea>
                                 {{-- PESAN ERROR --}}
                                 @error('judul')
@@ -79,7 +79,7 @@
                             {{-- LATAR BELAKANG --}}
                             <div class="form-group">
                                 <form action="#">
-                                <label><h6>I. Latar Belakang</h6></label>
+                                <label><h4>I. Latar Belakang</h4></label>
                                 <textarea id="latar_belakang" class="form-control @error('latar_belakang') is-invalid @enderror" rows="4" name="latar_belakang">{{ $laporan->latar_belakang}}</textarea>
                                 @error('latar_belakang')
                                     <div class="alert alert-danger">{{$message}}</div>
@@ -89,7 +89,7 @@
 
                             {{-- DASAR HUKUM --}}
                             <div class="form-group">
-                                <label for="exampleInputEmail1"><h6>II. Dasar Hukum</h6></label>
+                                <label for="exampleInputEmail1"><h4>II. Dasar Hukum</h4></label>
                                 <textarea id="dasar_hukum" class="form-control @error('dasar_hukum') is-invalid @enderror" name="dasar_hukum">{{ $laporan->dasar_hukum}}</textarea>
                                 {{-- PESAN ERROR --}}
                                 @error('dasar_hukum')
@@ -101,7 +101,7 @@
 
                             {{-- DASAR PELAKSANAAN --}}
                             <div class="form-group">
-                                <label for="exampleInputEmail1"><h6>III. Dasar Pelaksanaan</h6></label>
+                                <label for="exampleInputEmail1"><h4>III. Dasar Pelaksanaan</h4></label>
                                 <textarea id="dasar_pelaksanaan" class="form-control @error('dasar_pelaksanaan') is-invalid @enderror" name="dasar_pelaksanaan">{{ $laporan->dasar_pelaksanaan}}</textarea>
                                 {{-- PESAN ERROR --}}
                                 @error('dasar_pelaksanaan')
@@ -113,7 +113,7 @@
 
                             {{-- WAKTU PELAKSANAAN --}}
                             <div class="form-group">
-                                <label for="exampleInputEmail1"><h6>IV. Waktu Pelaksanaan</h6></label>
+                                <label for="exampleInputEmail1"><h4>IV. Waktu Pelaksanaan</h4></label>
                                 <textarea id="waktu_pelaksanaan" class="form-control @error('waktu_pelaksanaan') is-invalid @enderror" name="waktu_pelaksanaan">{{ $laporan->waktu_pelaksanaan}}</textarea>
                                 {{-- PESAN ERROR --}}
                                 @error('waktu_pelaksanaan')
@@ -126,7 +126,7 @@
                             {{-- HARI --}}
                             <div class="form-row">
                                 <div class="form-group col-md-3">
-                                    <label for="exampleInputEmail1">Tanggal</label>
+                                    <label for="exampleInputEmail1">Tanggal Kegiatan</label>
                                     <input type="date" class="form-control @error('hari') is-invalid @enderror" name="hari" value="{{ $laporan->hari}}">
                                     {{-- PESAN ERROR --}}
                                     @error('hari')
@@ -185,7 +185,7 @@
                  
                             {{-- TUJUAN --}}
                             <div class="form-group">
-                                <label for="exampleInputEmail1"><h6>V. Tujuan</h6></label>
+                                <label for="exampleInputEmail1"><h4>V. Tujuan</h4></label>
                                 <textarea rows="8" id="tujuan" class="form-control @error('tujuan') is-invalid @enderror" name="tujuan">{{ $laporan->tujuan}}</textarea>
                                 {{-- PESAN ERROR --}}
                                 @error('tujuan')
@@ -197,7 +197,7 @@
 
                             {{-- IDENTIFIKASI MASALAH --}}
                             <div class="form-group">
-                                <label for="exampleInputEmail1"><h6> VI. Identifikasi Masalah</h6></label>
+                                <label for="exampleInputEmail1"><h4> VI. Identifikasi Masalah</h4></label>
                                 <textarea id="summernote" class="form-control @error('identifikasi_masalah') is-invalid @enderror" name="identifikasi_masalah">{{ $laporan->identifikasi_masalah}}</textarea>
                                 {{-- PESAN ERROR --}}
                                 @error('identifikasi_masalah')
@@ -208,21 +208,38 @@
                             </div>
 
                             {{-- DOKUMENTASI --}}
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"><h6>VII. Dokumentasi (Foto)</h6></label>
-                                <textarea id="dokumentasi" class="form-control @error('dokumentasi') is-invalid @enderror" name="dokumentasi">{{ $laporan->dokumentasi}}</textarea>
+                            {{-- <div class="form-group">
+                                <label for="exampleInputEmail1"></label>
+                                <textarea id="dokumentasi" class="form-control @error('dokumentasi') is-invalid @enderror" name="dokumentasi">{{ $laporan->dokumentasi}}</textarea> --}}
                                 {{-- PESAN ERROR --}}
-                                @error('dokumentasi')
+                                {{-- @error('dokumentasi')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>
-                                @enderror
+                                @enderror --}}
+                            {{-- </div> --}}
+
+                            {{-- Image --}}
+                            <label for="exampleInputEmail1"><h4>VII. Dokumentasi (Foto)</h4></label>
+                            <div class="col-md-12 mb-2">
+                                @foreach($laporan->image as $image)
+                                <img id="preview-image-before-upload" width="150px" src="{{ asset('/storage/' . $image) }}"
+                                alt="preview image" style="max height: 200px;">
+                                @endforeach
                             </div>
+                            {{-- <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" class="form-control" name="image[]" placeholder="" multiple value="{{ serialize($laporan->image)}}">
+                                </div>
+                            </div> --}}
+
+                            <label for=""></label>
+                            <label for=""></label>
 
                             {{-- JABATAN KIRI --}}
                             <div class="form-row">
                                 <div class="form-group col-md-4" style="text-align: center">
-                                    <label for="exampleInputEmail1"><b>Tanda Tangan</b></label>
+                                    <label for="exampleInputEmail1"><h4>Tanda Tangan</h4></label>
                                     <input style="text-align: center" type="text" class="form-control @error('jabatan1') is-invalid @enderror" name="jabatan1" placeholder="Jabatan" value="{{ $laporan->jabatan1}}">
                                     
                                     @error('jabatan1')
@@ -236,7 +253,7 @@
 
                             {{-- JABATAN KANAN --}}
                             <div class="form-group col-md-4" style="text-align: center">
-                                <label for="exampleInputEmail1"><b>Tanda Tangan</b></label>
+                                <label for="exampleInputEmail1"><h4>Tanda Tangan</h4></label>
                                 <input style="text-align: center" type="text" class="form-control @error('jabatan2') is-invalid @enderror" name="jabatan2" placeholder="Jabatan" value="{{ $laporan->jabatan2}}">
                                 @error('jabatan2')
                                     <div class="invalid-feedback">
@@ -268,7 +285,7 @@
 
                             {{-- JABATAN BAWAH TENGAH --}}
                             <center><div class="form-group col-md-4" style="text-align: center">
-                                <label for="exampleInputEmail1"><b>Tanda Tangan</b></label>
+                                <label for="exampleInputEmail1"><h4>Tanda Tangan</h4></label>
                                 <textarea id="jabatan3" style="text-align: center" type="text" class="form-control @error('jabatan3') is-invalid @enderror" name="jabatan3" placeholder="Jabatan">{{ $laporan->jabatan3}}</textarea>
                                 @error('jabatan3')
                                     <div class="invalid-feedback">
@@ -510,7 +527,7 @@
         <script>
             $(document).ready(function() {
                 $('#jabatan3').summernote({
-                placeholder: 'Jabatan (Langsung Enter jika a.n untuk menambahkan jabatan dibawahnya)',
+                placeholder: 'Jabatan (a.n KEPALA DINAS LINGKUNGAN HIDUP - SEKRETARIS)',
                 tabsize: 2,
                 height: 80,
                 toolbar: [

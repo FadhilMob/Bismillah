@@ -84,19 +84,8 @@ class LaporanController extends Controller
             'image' => 'nullable|array'
         ]);
 
-        //memang fungsi array(kayaknya) makanya ditambah s
-        $images = [];
-        if ($request->hasFile('image')) {
-            foreach ($laporan['image'] as $image) {
-                $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
-                $image_path =  $image->storeAs('image', $fileName,'public');
-                array_push($images, $image_path);
-                
-            }
-        }
-        
-        $laporan['image'] = $images;
-        $dataInsert = [
+
+        $laporan = [
             'user_id' => Auth::id(),
             'rhk_id' => $request-> rhk_id,
             'judul' => $request-> judul,
@@ -127,8 +116,21 @@ class LaporanController extends Controller
             'role' => $request ->role,
             'image' => $request ->image
         ];
+
+                //memang fungsi array(kayaknya) makanya ditambah s
+                $images = [];
+                if ($request->hasFile('image')) {
+                    foreach ($laporan['image'] as $image) {
+                        $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
+                        $image_path =  $image->storeAs('image', $fileName,'public');
+                        array_push($images, $image_path);
+                        
+                    }
+                }
+                
+                $laporan['image'] = $images;
         // LaporanModel::create($laporan);
-        $laporan = LaporanModel::create ( $dataInsert);
+        $laporan = LaporanModel::create ( $laporan);
         return redirect()->route('laporan.index')->with('success', 'Data berhasil disimpan');
     }
 

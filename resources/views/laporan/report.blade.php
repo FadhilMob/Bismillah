@@ -190,12 +190,12 @@
         </p>
         
         {{-- // INPUTAN --}}
-        <table border="0" width="650px">
-            <tr>
-                <td width = "57"></td>
-                <div>{!! $laporan->dokumentasi !!}<br></div>
-            </tr>
-        </table>
+        <div class="padding-img">
+            @foreach($laporan->image as $image)
+                <img style="padding-top: 40px;" height="300px" width="330px" src="{{ public_path('/storage/' . $image) }}" alt="">
+            @endforeach
+        </div>
+
         <p style="margin: 0 17 5 57">Laporan ini disusun sebagai salah satu dokumen pendukung dalam rangka pertanggungjawaban pelaksanaan kegiatan serta dapat digunakan sebagaimana mestinya
         </p>
     </div>

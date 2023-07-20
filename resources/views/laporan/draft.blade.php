@@ -24,6 +24,7 @@
                             <th scope="col"><center>No</center></th>
                             <th style="width: 200px" scope="col"><center>Waktu Pelaksanaan</center></th>
                             <th style="width: 750px" scope="col"><center>Judul Kegiatan</center></th>
+                            {{-- <th style="width: 750px" scope="col"><center>Gambar Kegiatan</center></th> --}}
                             <th style="width: 250px" scope="col"><center>Aksi</center></th>
                             <th style="width: 150px" scope="col"><center> Status Laporan</center></th>
                             <th style="width: 150px"scope="col"><center>Unduh</center></th>
@@ -35,6 +36,12 @@
                             <th scope="row">{{ $key+1 }}</th>
                             <td>{{ \Carbon\Carbon::parse($laporan->hari)->translatedFormat('l\, d F Y') }}</td>
                             <td>{{ $laporan->judul }}</td>
+                            {{-- <td>
+                                @foreach($laporan->image as $image)
+                                    <center><img height="70" width="60" src="{{ asset('/storage/' . $image) }}" alt="multiple image"
+                                        class="w-20 h-20 border border-blue-600"></center>
+                                @endforeach
+                            </td> --}}
                             <td align="center">
                                 
                                 {{-- Tombol Delete --}}

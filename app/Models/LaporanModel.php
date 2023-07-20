@@ -37,9 +37,15 @@ class LaporanModel extends Model
         'nama3',
         'fungsional3',
         'nip3',
-        'role'
+        'role',
+        'image'
 
     ];
+
+    protected $casts = [
+        'image' => 'array'
+    ];
+    
     public function dt_userLap()
     {
         return $this->belongsTo(User::class, 'user_id');
