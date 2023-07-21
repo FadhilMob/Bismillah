@@ -63,7 +63,7 @@
                             <div class="container">
                                 <center><h2>TAMBAHKAN LAPORAN </h2></center>
 
-                            {{-- RHK --}}
+                            <!-- {{-- RHK --}}
                             <div class="form-group mt-4">
                                 <label for="exampleInputEmail1"><h4>RHK</h4></label>
                                 {{-- dropdown RHK --}}
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <label for=""></label>
-                            <label for=""></label>
+                            <label for=""></label> -->
 
                                  {{-- JUDUL --}}
                             <div class="form-group mt-4">

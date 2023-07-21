@@ -118,31 +118,6 @@
                                                                     @enderror
                                                         </td>
                                                     </div>
-                
-                                            {{-- User --}}
-                                                    <div class="form-group col-md-3">
-                                                        <td>
-                                                            <label for="exampleInputEmail1" class="form-label mt-10">Kode ASN</label>
-                                                                <div class="dropdown">
-                                                                    <div class="btn-group">
-                                                                            <select id="user-dropdown" class="form-control" name="user_id[]">
-                                                                                <option value="">-- Pilih Kode ASN --</option>
-                                                                                @foreach ($user as $data) 
-                                                                                <option value="{{$data->id}}">
-                                                                                    {{$data->username}} - {{$data->name}}
-                                                                                </option>
-                                                                                @endforeach
-                                                                            </select>
-                                                                    </div>
-                                                                </div>
-                                                                    {{-- PESAN ERROR --}}
-                                                                    @error('users')
-                                                                        <div class="invalid-feedback">
-                                                                            {{$message}}
-                                                                        </div>
-                                                                    @enderror
-                                                        </td>
-                                                    </div>
                                                 </div>
 
                                                 <td>

@@ -30,7 +30,7 @@
     <!-- Nav Item - Pages Collapse Menu -->
 
     <li class="nav-item">
-        <a class="nav-link" href="/users">
+        <a class="nav-link" href="/admin">
             <i class="fas fa-fw fa-cog"></i>
             <span>DATA USERS & ADMIN</span>
         </a>

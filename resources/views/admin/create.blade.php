@@ -4,7 +4,7 @@
         <h2>Tambah Data Admin & Users</h2>
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('users.store') }}">
+                    <form method="POST" action="{{ route('admin.store') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -107,7 +107,7 @@
                             {{-- TOMBOL TAMBAH --}}   
                             <button style="width: 90px; height: 40px" type="submit" value="submit" name="add" class="btn btn-md btn-success mt-2">SAVE</button>
                             {{-- TOMBOL BACK --}}
-                            <a href="/users" style="width: 90px; height: 40px" class="btn btn-md btn-secondary mt-2">BACK
+                            <a href="/admin" style="width: 90px; height: 40px" class="btn btn-md btn-secondary mt-2">BACK
                                 {{-- <span class="text">Tambah</span> --}}
                             </a>
                     </form>

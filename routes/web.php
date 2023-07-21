@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RhkController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -32,14 +32,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('main');
 
-Route::get('/admin-home', [App\Http\Controllers\HomeController::class, 'adminHome'])
+Route::get('/admin-home', [App\Http\Controllers\AdminController::class, 'adminHome'])
     ->name('admin-home')->middleware('role');
 
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout'])->name('logout')->middleware('auth');
 
+
 Route::resource('rhk', RhkController::class);
 Route::get('rhk/{id}/show', [RhkController::class, 'show'])->middleware('auth');
-Route::resource('users', UserController::class);
+
+Route::resource('admin', AdminController::class);
 Route::resource('intervensi', IntervensiController::class);
 
 Route::post('laporan', [LaporanController::class, 'index'])->name('laporan.index');

@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Hash;
 
-class UserController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +16,23 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('dt_Bidang')->get();
-        return view('users.index',[
-            'users'=>$users
+        $admin = User::with('dt_Bidang')->get();
+        return view('admin.index',[
+            'admin'=>$admin
         ]);
     }
 
+    public function adminHome(){
+            $admin = User::with('id')->where('role','admin')->count();
+            $user = User::with('id')->where('role','user')->count();
+
+            $dashboardAdmin=User::get();
+
+            return view('admin-home',[
+                'admin' => $admin,
+                'user' => $user,
+            ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -30,7 +41,7 @@ class UserController extends Controller
     public function create()
     {
         $bidang = BidangModel::get();
-        return view('users.create', compact(['bidang'])); 
+        return view('admin.create', compact(['bidang'])); 
     }
 
     /**
@@ -51,7 +62,7 @@ class UserController extends Controller
                 'role' => $input['role'],
                 'password' => Hash::make($input['password'])
         ]);
-            return redirect()->route('users.index')->with('success', 'Data berhasil disimpan');
+            return redirect()->route('admin.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -62,8 +73,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $users = User::find($id);
-        return view('users.show',['users'=>$users]);
+        $admin = User::find($id);
+        return view('admin.show',['admin'=>$admin]);
     }
 
     /**
@@ -74,7 +85,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $admin = User::find($id);
+        $bidang = BidangModel::all();
+        return view('admin.edit',['admin'=>$admin,'bidang'=>$bidang]);
     }
 
     /**
@@ -86,7 +99,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $admin = User::find($id);
+        $admin->username = $request->username;
+        $admin->name = $request->name;
+        $admin->bidang_id = $request->bidang_id;
+        $admin->email = $request->email;
+        $admin->role = $request->role;
+        $admin->password = Hash::make($request['password']);
+        $admin->save();
+        return redirect()->route('admin.index')->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -95,8 +116,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $admin)
     {
-        //
+        $admin->delete($admin->id);
+        return redirect()->route('admin.index')->with('success', 'Data berhasil dihapus');
     }
 }

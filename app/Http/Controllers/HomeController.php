@@ -52,9 +52,9 @@ class HomeController extends Controller
         }
     }
 
-    public function adminHome(){
-        return view('admin-home');
-    }
+    // public function adminHome(){
+    //     return view('admin-home');
+    // }
 
     public function logout(Request $request)
     {

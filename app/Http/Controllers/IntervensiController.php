@@ -55,7 +55,6 @@ class IntervensiController extends Controller
                $bidang_id       = $request->input('bidang_id');
                $user_id         = $request->input('user_id');
        
-       
                $total = count($nama_intervensi);
        
        
@@ -66,7 +65,7 @@ class IntervensiController extends Controller
                        IntervensiModel::create([
                            'nama_intervensi'     => $nama_intervensi[$i],
                            'bidang_id'     => $bidang_id[$i],
-                           'user_id'   => $user_id[$i]
+                           'user_id'   => Auth::id(),
                        ]);
                    }
        

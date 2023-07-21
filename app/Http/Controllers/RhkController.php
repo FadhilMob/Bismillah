@@ -70,7 +70,7 @@ class RhkController extends Controller
                     'nama_rhk'     => $nama_rhk[$i],
                     'bidang_id'     => $bidang_id[$i],
                     'intervensi_id'     => $intervensi_id[$i],
-                    'user_id'   => $user_id[$i]
+                    'user_id'   => Auth::id()
                 ]);
             }
 
