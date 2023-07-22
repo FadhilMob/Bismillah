@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\RhkModel;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use PDF;
 
@@ -163,52 +164,55 @@ class LaporanController extends Controller
      * @param  \App\Models\LaporanModel  $laporanModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, LaporanModel $laporan)
     {
-        $laporan = LaporanModel::find($id);
-        // $data=$request->all();
-            // menyimpan data file yang diupload ke variabel $file
-        // $file = $request->file('image');
-        // if($file != '') {
+        $data = [
+            'judul' => $request-> judul,
+            'latar_belakang' => $request -> latar_belakang,
+            'dasar_hukum' => $request -> dasar_hukum,
+            'dasar_pelaksanaan' => $request -> dasar_pelaksanaan,
+            'waktu_pelaksanaan' => $request ->waktu_pelaksanaan,
+            'hari' => $request ->hari,
+            'pukul1' => $request ->pukul1,
+            'pukul2' => $request ->pukul2,
+            'tempat' => $request ->tempat,
+            'peserta' => $request ->peserta,
+            'tujuan' => $request ->tujuan,
+            'identifikasi_masalah' => $request ->identifikasi_masalah,
+            'dokumentasi' => $request ->dokumentasi,
+            'jabatan1' => $request ->jabatan1,
+            'nama1' => $request ->nama1,
+            'fungsional1' => $request ->fungsional1,
+            'nip1' => $request ->nip1,
+            'jabatan2' => $request ->jabatan2,
+            'nama2' => $request ->nama2,
+            'fungsional2' => $request ->fungsional2,
+            'nip2' => $request ->nip2,
+            'jabatan3' => $request ->jabatan3,
+            'nama3' => $request ->nama3,
+            'fungsional3' => $request ->fungsional3,
+            'nip3' => $request ->nip3,
+            'role' => $request ->role
+        ];
 
-            // nama file
-        // $nama_file = time()."_".$file->getClientOriginalName();
-        // $tujuan_upload = 'storage/laporan';
-            // upload file
-        // $file->move($tujuan_upload,$nama_file);
-        // $data['image'] = $nama_file;
-        // File::delete('storage/laporan/'.$laporan->image);
-        // }
-        $laporan->judul = $request->judul;
-        $laporan->latar_belakang = $request->latar_belakang;
-        $laporan->dasar_hukum = $request->dasar_hukum;
-        $laporan->dasar_pelaksanaan = $request->dasar_pelaksanaan;
-        $laporan->waktu_pelaksanaan = $request->waktu_pelaksanaan;
-        $laporan->hari = $request->hari;
-        $laporan->pukul1 = $request->pukul1;
-        $laporan->pukul2 = $request->pukul2;
-        $laporan->tempat = $request->tempat;
-        $laporan->peserta = $request->peserta;
-        $laporan->tujuan = $request->tujuan;
-        $laporan->identifikasi_masalah = $request->identifikasi_masalah;
-        $laporan->dokumentasi = $request->dokumentasi;
-        $laporan->role = $request->role;
-        $laporan->jabatan1 = $request->jabatan1;
-        $laporan->nama1 = $request->nama1;
-        $laporan->fungsional1 = $request->fungsional1;
-        $laporan->nip1 = $request->nip1;
-        $laporan->jabatan2 = $request->jabatan2;
-        $laporan->nama2 = $request->nama2;
-        $laporan->fungsional2 = $request->fungsional2;
-        $laporan->nip2 = $request->nip2;
-        $laporan->jabatan3 = $request->jabatan3;
-        $laporan->nama3 = $request->nama3;
-        $laporan->fungsional3 = $request->fungsional3;
-        $laporan->nip3 = $request->nip3;
-        $laporan->save();
-        // $laporan->update($data);
-        return redirect()->route('laporan.index')->with('success', 'Data berhasil diedit');
-    }
+                //update image dan hapus image
+                $images = [];
+                if ($request->hasFile('image')) {
+                    foreach ($laporan->image as $imgfile) {
+                        Storage::delete('public/'.$imgfile);
+                    }
+                    foreach ($request ->image as $image) {
+                        $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
+                        $image_path =  $image->storeAs('image', $fileName,'public');
+                        array_push($images, $image_path);
+                        $data['image'] = $images;
+                        $laporan->update($data);
+                    }
+                }else{
+                $laporan->update($data);
+                }
+                return redirect()->route('laporan.index')->with('success', 'Data berhasil diedit');
+}
 
     /**
      * Remove the specified resource from storage.

@@ -207,7 +207,7 @@
                                 @enderror
                             </div>
 
-                            {{-- DOKUMENTASI --}}
+                            <!-- {{-- DOKUMENTASI --}}
                             {{-- <div class="form-group">
                                 <label for="exampleInputEmail1"></label>
                                 <textarea id="dokumentasi" class="form-control @error('dokumentasi') is-invalid @enderror" name="dokumentasi">{{ $laporan->dokumentasi}}</textarea> --}}
@@ -217,21 +217,20 @@
                                         {{$message}}
                                     </div>
                                 @enderror --}}
-                            {{-- </div> --}}
+                            {{-- </div> --}} -->
 
                             {{-- Image --}}
                             <label for="exampleInputEmail1"><h4>VII. Dokumentasi (Foto)</h4></label>
                             <div class="col-md-12 mb-2">
                                 @foreach($laporan->image as $image)
-                                <img id="preview-image-before-upload" width="150px" src="{{ asset('/storage/' . $image) }}"
-                                alt="preview image" style="max height: 200px;">
+                                    <img id="preview-image-before-upload" width="150px" src="{{ asset('/storage/' . $image) }}" alt="preview image" style="max height: 200px;">
                                 @endforeach
                             </div>
-                            {{-- <div class="input-group mb-3">
+                            <div class="input-group mb-3">
                                 <div class="custom-file">
-                                    <input type="file" class="form-control" name="image[]" placeholder="" multiple value="{{ serialize($laporan->image)}}">
+                                    <input type="file" class="form-control" name="image[]" placeholder="" multiple>
                                 </div>
-                            </div> --}}
+                            </div>
 
                             <label for=""></label>
                             <label for=""></label>

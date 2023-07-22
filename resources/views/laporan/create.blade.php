@@ -99,10 +99,10 @@
 
                             {{-- Image --}}
                             <div>
-                            <label for="image"><h4>Dokumentasi</h4><h6 style="color: red"> *WAJIB diisi dan hanya bisa input diawal, tidak bisa diedit</h6></label>
-                            <input type="file" class="form-control" name="image[]" placeholder="" multiple/>
-                            <label for=""></label>
-                            <label for=""></label>
+                                <label for="image"><h4>Dokumentasi</h4><h6 style="color: red"> *WAJIB diisi dan hanya bisa input diawal, tidak bisa diedit</h6></label>
+                                <input type="file" class="form-control" name="image[]" placeholder="" multiple/>
+                                <label for=""></label>
+                                <label for=""></label>
                             </div>
 
                             {{-- HARI --}}
@@ -252,7 +252,7 @@
                             <label for=""></label>
                             <label for=""></label>
 
-                            {{-- DOKUMENTASI --}}
+                            <!-- {{-- DOKUMENTASI --}}
                             {{-- <div class="form-group">
                                 <label for="exampleInputEmail1"><h4>VII. Dokumentasi (Foto)</h4></label>
                                 <textarea id="dokumentasi" class="form-control @error('dokumentasi') is-invalid @enderror" name="dokumentasi" >{{ old('dokumentasi')}}</textarea> --}}
@@ -262,7 +262,7 @@
                                         {{$message}}
                                     </div>
                                 @enderror
-                            </div> --}}
+                            </div> --}} -->
 
                             {{-- JABATAN KIRI --}}
                             <div class="form-row">

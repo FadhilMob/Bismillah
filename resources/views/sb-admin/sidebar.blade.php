@@ -3,7 +3,7 @@
 <ul class="navbar-nav bg-smart sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home">
         <div class="sidebar-brand-icon ">
         <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Logo_Kota_Batu%2C_Jawa_Timur_%28Seal_of_Batu%2C_East_Java%29.svg" 
                                 width="50" height="50">
