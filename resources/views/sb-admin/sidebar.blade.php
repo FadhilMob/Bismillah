@@ -15,7 +15,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item @yield('main')">
         <a class="nav-link" href="/home">
             <i style="font-size:20px" class="material-icons">&#xe871;</i>
             <span>DASHBOARD</span></a>
@@ -31,28 +31,28 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
 
-    <li class="nav-item">
+    <li class="nav-item @yield('intervensi') @yield('intervensi.create')">
         <a class="nav-link" href="/intervensi">
             <i style="font-size:20px" class="fa">&#xf16c;</i>
             <span>DATA INTERVENSI</span>
         </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item @yield('rhk') @yield('rhk.create')">
         <a class="nav-link" href="/rhk">
-            <i style="font-size:20px" class="fa">&#xf16c;</i>
+            <i style="font-size:19px" class="bi bi-bar-chart-steps"></i>
             <span>DATA RHK</span>
         </a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item @yield('laporan.create')">
         <a class="nav-link" href="/laporan/create">
-            <i style="font-size:20px" class="bi bi-file-earmark-plus"></i>
+            <i style="font-size:23px" class="bi bi-file-earmark-plus"></i>
             <span>LAPORAN</span>
         </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item @yield('laporan.draft') @yield('laporan.edit')">
         <a class="nav-link" href="/laporan">
-            <i style="font-size:20px" class="material-icons">&#xe2c7;</i>
+            <i style="font-size:23px" class="bi bi-folder2-open"></i>
             <span>ARSIP</span>
         </a>
     </li>

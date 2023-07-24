@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    @section ('rhk.create', 'active')
 <head>
 
     <meta charset="utf-8">

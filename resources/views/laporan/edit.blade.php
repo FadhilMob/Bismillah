@@ -1,4 +1,5 @@
 <!doctype html>
+@section ('laporan.edit', 'active')
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -229,6 +230,9 @@
                             <div class="input-group mb-3">
                                 <div class="custom-file">
                                     <input type="file" class="form-control" name="image[]" placeholder="" multiple>
+                                </div>
+                                <div>
+                                    <i style="font-size:4;color: red"> *Apabila anda ingin menambah, menghapus, atau mengganti gambar yang sudah ada, maka gambar yang tersimpan sebelumnya akan secara langsung terhapus. Jadi, masukkan kembali gambar yang anda butuhkan dan pastikan bahwa gambar tersebut sudah benar.</i>
                                 </div>
                             </div>
 

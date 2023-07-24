@@ -1,4 +1,5 @@
 <!doctype html>
+@section ('laporan.create', 'active')
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -99,12 +100,16 @@
 
                             {{-- Image --}}
                             <div>
-                                <label for="image"><h4>Dokumentasi</h4><h6 style="color: red"> *WAJIB diisi dan hanya bisa input diawal, tidak bisa diedit</h6></label>
+                                <label for="image"><h4>Dokumentasi</h4>
+                                    {{-- <h6 style="color: red"> *WAJIB diisi dan hanya bisa input diawal, tidak bisa diedit</h6> --}}
+                                </label>
                                 <input type="file" class="form-control" name="image[]" placeholder="" multiple/>
+                                <label for=""> <i style="font-size:4;color: red"> *Direkomendasikan 6 sampai 8 gambar</i></label>
+                                <label for=""></label>
                                 <label for=""></label>
                                 <label for=""></label>
                             </div>
-
+                            
                             {{-- HARI --}}
                             <div class="form-row">
                                 <div class="form-group col-md-3">
@@ -140,6 +145,9 @@
                                 @enderror
                             </div>
                             </div>
+                            <div>
+                            <i style="font-size:4;color: red"> *Tanggal Kegiatan Wajib diisi</i></div>
+                            <label for=""></label>
                             <label for=""></label>
                             <label for=""></label>
 

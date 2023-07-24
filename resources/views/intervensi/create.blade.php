@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    @section ('intervensi.create', 'active')
 <head>
 
     <meta charset="utf-8">

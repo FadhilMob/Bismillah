@@ -1,5 +1,5 @@
 @extends('sb-admin.index')
-
+@section('main', 'active')
 @section('title')
     SMART PEKAN
 @endsection

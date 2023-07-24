@@ -1,5 +1,5 @@
 @extends('sb-admin.index')
-
+@section ('rhk', 'active')
 @section('title')
     | DATA RHK
 @endsection

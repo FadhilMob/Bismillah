@@ -20,7 +20,7 @@
                         <form method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="row mb-50">
-                                        <label for="username" class="col-md-10 col-form-label text-md-end">{{ __('Username') }}</label>
+                                        <label for="username" class="col-md-10 col-form-label text-md-end">{{ __('NIP') }}</label>
 
                                         <div class="col-md-100">
                                             <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>

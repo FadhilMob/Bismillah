@@ -1,5 +1,5 @@
 @extends('sb-admin.index')
-
+@section ('laporan.draft', 'active')
 @section('title')
     | DATA ARSIP
 @endsection
